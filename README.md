@@ -7,6 +7,8 @@
     路由处理
     beego处理判断 -》mysql数据库
     返回登录
+    
+    
 2、添加文章
     设置表
     设计表
@@ -27,6 +29,8 @@
         插入数据库
             添加文章页面
             form表单允许提交文件，表单属性enctype="multipart/from-data"
+            
+            
 3、显示主页
     o.QueryTable("").All(&article)  //查询表所有内容
     view设计
@@ -39,11 +43,17 @@
     路由
     控制获取view传递id，查询数据库，获取数据
     数据传递给view
+    
+    
 5、编辑页面、
     orm操作数据库更新
+    
+    
 6、删除页面
     orm操作数据库更新
     删除确认功能：
+    
+    
 7、分页
         查询多少数据
         共有多少页  //Math.Ceil        Math.floor
@@ -52,6 +62,9 @@
             beego模板函数  //beego.AddFuncMap()  {{.N | func }}
             优化
             {{if compare .FirstPage true}}
+            
+            
+            
 8、添加分类
     数据表
         `orm:"rel(fk)"`      `orm:"reverse(many)"`
@@ -61,10 +74,14 @@
             选择的Id与类别Id比较
             选择单击触发submit
             qs.Limit().RelatedSel()Filter()All()   //RelatedSel关系查询，参数使用 expr
+            
+            
 9、cookie
      c.Ctx.SetCookie("key","value",time)
      c.Ctx.GetCookie("key")
     userName := c.Ctx.GetCookie("userName")
+    
+    
 
 10、session
     开启session
@@ -73,7 +90,11 @@
     c.GetSession()
     c.DelSession()
 
+
+
 11、退出
+
+
 
 12、过滤路由
         beego.InsertFilter(pattern string, position int, filter FilterFunc, params ...bool)
@@ -94,6 +115,8 @@
           	}
           }
 
+
+
 13、视图布局
     beego 支持 layout 设计，例如你在管理系统中，整个管理界面是固定的，只会变化中间的部分，那么你可以通过如下的设置：
     c.Layout="layout.html"
@@ -105,7 +128,9 @@
             则根据需要放在合适的位置。在 Layout 页中仅有一个 LayoutContent 是不够的。所以在 
             Controller 中增加了一个 LayoutSections属性，可以允许 Layout 页中设置多个 section，
             然后每个 section 可以分别包含各自的子模板页。
-        
+  
+  
+  
 14、细化
     浏览次数
     浏览人
